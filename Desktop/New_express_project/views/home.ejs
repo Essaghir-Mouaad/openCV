@@ -1,0 +1,14 @@
+<%-include('partials/header.ejs');-%>
+
+    <h1>Home</h1>
+
+    <p><%= startContent %></p>
+
+    <% post.forEach(element => {%>
+        <h1><%= element.title%></h1>
+        <%var article_to_post = element.article %>
+        <%var truncated_article = article_to_post.substring(0, 100) %>
+        <p><%= truncated_article + "..."%><a href="/posts/<%= element.title%>">Read more</a> </p>
+    <% });%>
+
+<%-include('partials/footer.ejs');-%>
